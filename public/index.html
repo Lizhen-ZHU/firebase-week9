@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>my meme library</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+</head>
+
+<body>
+
+	<app></app>
+
+	<script src="./tags/app.tag" type="riot/tag"></script>
+	<script src="./tags/about.tag" type="riot/tag"></script>
+	<script src="./tags/menu.tag" type="riot/tag"></script>
+	<script src="./tags/admin.tag" type="riot/tag"></script>
+	<script src="./tags/admin_entry.tag" type="riot/tag"></script>
+	<script src="./tags/memes.tag" type="riot/tag"></script>
+	<script src="./tags/meme.tag" type="riot/tag"></script>
+
+	<script src="https://cdn.jsdelivr.net/riot/3.0/riot+compiler.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/riot-route/3.0/route.min.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
+	<script>
+	  // Initialize Firebase
+	  var config = {
+	    apiKey: "AIzaSyDvDw3QdCP90dqNjeeqzH_GuLL5RXrHbB0",
+	    authDomain: "meme-329b6.firebaseapp.com",
+	    databaseURL: "https://meme-329b6.firebaseio.com",
+	    projectId: "meme-329b6",
+	    storageBucket: "meme-329b6.appspot.com",
+	    messagingSenderId: "902264365404"
+	  };
+	  firebase.initializeApp(config);
+
+
+		//firebase is a js object that help communicate between your code and the cloud server
+		//get a function from this object that specifically deals with database
+		var database = firebase.database();
+
+		//step one: it's a common practice to get the reference to the root of the database
+		var rootRef = database.ref('/');
+
+		var observable = riot.observable();
+		riot.mount('*');
+	</script>
+
+</body>
+</html>
